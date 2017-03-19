@@ -15,5 +15,8 @@ Route::get('/','StaticPagesController@home')->name('home');
 Route::get('/help','StaticPagesController@help')->name('help');
 Route::get('/about','StaticPagesController@about')->name('about');
 
-// 用户注册页面
-Route::get('signup', 'UsersController@create')->name('signup');
+// 用户注册页面 多余的，用户资源路由中已经存在
+// Route::get('signup', 'UsersController@create')->name('signup');
+
+// 用户资源路由
+Route::resource('users', 'UsersController');
