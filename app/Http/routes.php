@@ -20,3 +20,8 @@ Route::get('/about','StaticPagesController@about')->name('about');
 
 // 用户资源路由
 Route::resource('users', 'UsersController');
+
+//用户登录、退出
+Route::get('login', 'SessionsController@create')->name('login');
+Route::post('login', 'SessionsController@store')->name('login');
+Route::delete('logout', 'SessionsController@destroy')->name('logout');
