@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\Models\Status;
+use Auth;
+
 class StaticPagesController extends Controller
 {
 	//首页
@@ -13,7 +16,12 @@ class StaticPagesController extends Controller
     {
     	// return '首页';
     	
-    	return view('static_pages/home');
+           $feed_items = [];
+           if(Auth::check()){
+            $feed_items = Auth::user()->feed()->paginate(30);
+           }
+
+    	return view('static_pages/home',compact('feed_items'));
     }
 
     	//帮助页

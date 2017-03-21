@@ -37,6 +37,7 @@ class User extends Model implements AuthenticatableContract,
      */
     protected $hidden = ['password', 'remember_token'];
 
+    //注册时随机生成的激活码
     public static function boot()
     {
         parent::boot();
@@ -45,4 +46,16 @@ class User extends Model implements AuthenticatableContract,
             $user->activation_token = str_random(30);
         });
     }    
+
+    // 一个用户拥有多条微博 1.一对多，所以微博要复数 2.用户里写微博
+    public function statuses()
+    {
+        return $this->hasMany(Status::class);
+    }
+
+    //首页获取微博信息
+    public function feed()
+    {
+        return $this->statuses()->orderBy('created_at','desc');
+    }
 }
