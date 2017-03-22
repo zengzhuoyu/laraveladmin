@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'AddActivationToUsersTable' => $baseDir . '/database/migrations/2017_03_20_170147_add_activation_to_users_table.php',
     'AddIsAdminToUsersTable' => $baseDir . '/database/migrations/2017_03_20_152614_add_is_admin_to_users_table.php',
+    'CreateFollowersTable' => $baseDir . '/database/migrations/2017_03_21_161918_create_followers_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateStatusesTable' => $baseDir . '/database/migrations/2017_03_21_105551_create_statuses_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
@@ -15,6 +16,7 @@ return array(
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',
     'File_Iterator_Factory' => $vendorDir . '/phpunit/php-file-iterator/src/Factory.php',
+    'FollowersTableSeeder' => $baseDir . '/database/seeds/FollowersTableSeeder.php',
     'Hamcrest\\Arrays\\IsArray' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArray.php',
     'Hamcrest\\Arrays\\IsArrayContaining' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContaining.php',
     'Hamcrest\\Arrays\\IsArrayContainingInAnyOrder' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContainingInAnyOrder.php',

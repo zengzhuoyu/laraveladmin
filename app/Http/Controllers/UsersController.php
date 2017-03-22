@@ -19,7 +19,7 @@ class UsersController extends Controller
     {
         //未登录用户不允许访问个人资料编辑页面和编辑数据提交
         $this->middleware('auth',[
-            'only' => ['edit','update','destroy']
+            'only' => ['edit','update','destroy','followings','followers']
         ]);
 
         //已登录用户不允许访问注册页面
@@ -154,4 +154,28 @@ class UsersController extends Controller
         session()->flash('success','成功删除用户！');
         return back();
     }
+
+    //关注列表
+    public function followings($id)
+    {
+        $user = User::findOrFail($id);
+        $users = $user->followings()->paginate(30);
+        $title = '关注的人';
+        return view('users.show_follow', compact('users', 'title'));
+    }    
+
+    //粉丝列表
+    public function followers($id)
+    {
+        $user = User::findOrFail($id);
+        $users = $user->followers()->paginate(30);
+        $title = '粉丝';
+        return view('users.show_follow', compact('users', 'title'));
+    }    
+
+
+
+
+
+
 }

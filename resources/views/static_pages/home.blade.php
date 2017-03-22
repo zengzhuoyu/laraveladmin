@@ -17,6 +17,9 @@
         <section class="user_info">
           @include('layouts.user_info', ['user' => Auth::user()])
         </section>
+        <section class="stats">
+          @include('layouts.stats', ['user' => Auth::user()])
+        </section>        
       </aside>
     </div>
   @else
