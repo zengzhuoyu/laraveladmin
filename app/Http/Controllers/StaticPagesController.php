@@ -15,7 +15,7 @@ class StaticPagesController extends Controller
     public function home()
     {
     	// return '首页';
-    	
+
            $feed_items = [];
            if(Auth::check()){
             $feed_items = Auth::user()->feed()->paginate(30);
