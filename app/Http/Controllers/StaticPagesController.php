@@ -15,6 +15,7 @@ class StaticPagesController extends Controller
     public function home()
     {
     	// return '首页';
+            // echo config('web.WEB_NAME');
 
            $feed_items = [];
            if(Auth::check()){
